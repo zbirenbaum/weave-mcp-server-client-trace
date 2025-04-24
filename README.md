@@ -1,4 +1,23 @@
-# How to Implement End-to-End Tracing for MCP Client-Server Applications
+# Weave MCP Server + Client Linked Traces:
+This repo is taken from the example in Arize-ai/phoenix and adapted to export to wandb/weave.
+Note: There is a race condition which sometimes causes the tool to fail to run at the OpenAI call step. This bug was also present in the original and was not introduced by weave.
+
+## Set up your environment:
+
+First run `cp .env.example .env`
+Follow the instructions and set the relevant keys in your new env file.
+
+## Install Dependencies:
+
+- uv: `uv sync`
+- pip: `pip install -r requirements.txt`
+
+## Run the client and export traces
+
+- uv: `uv run client.py`
+- python: `python client.py`
+
+# (From Arize) How to Implement End-to-End Tracing for MCP Client-Server Applications
 
 This tutorial shows you how to propagate OpenTelemetry (OTEL) context between an MCP client and server for complete observability. The `openinference-instrumentation-mcp` package makes this possible by providing instrumentation for both client and server components.
 
